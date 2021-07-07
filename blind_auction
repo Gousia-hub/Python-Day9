@@ -1,0 +1,27 @@
+from replit import clear
+#HINT: You can call clear() to clear the output in the console.
+from art import logo
+print(logo)
+
+bid_price = {}
+shud_repeat = True
+highest_bidder = ""
+
+def winner(bidding_record):
+  for bidder in bidding_record:
+    all_values = bidding_record.values()
+    max_value = max(all_values)
+  print(f"The winner is {bidder} with bid value ${max_value}.")
+  
+while shud_repeat:
+
+  name = input("What is your name?: ")
+  bid = int(input("What is your bid?: $"))
+  
+  bid_price[name] = bid
+  ask = input("Are there any other bidders?'yes'or'no':\n " )
+  if ask == "no":
+    shud_repeat = False
+    winner(bid_price)
+  elif ask == "yes":
+    clear()
